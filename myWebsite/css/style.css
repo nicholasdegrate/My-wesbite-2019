@@ -1,0 +1,668 @@
+/************** 
+Default settings 
+**************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+li {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 1);
+}
+#main-wrap {
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.5;
+    display: grid;
+    grid-column: 1fr;
+    grid-row: repeat(5, 1fr);
+    -ms-grid-column: 1fr;
+    -ms-grid-row: repeat(5, 1fr);
+    grid-template-areas: 
+    'header'
+    'about'
+    'toolbox'
+    'port'
+    'contact'
+    ;
+    width: 100%;
+}
+    /* made changes  */
+header {
+    grid-area: header;
+}
+#about {
+    grid-area: about;
+}
+#toolbox {
+    grid-area: toolbox;
+    height: 900px;
+}
+#portfolio {
+    grid-area: port;
+}
+#contact {
+    grid-area: contact;
+    height: 500px;
+    background-color: rgba(0, 0, 0, .1);
+    color: #fff !important;
+}
+/************** 
+header layout 
+**************/
+
+div.nav {
+    color: rgba(0, 0, 0, .5);
+}
+.clearfix::after {
+    visibility: hidden;
+    display: table;
+    content: '';
+    clear: both;
+}
+#main-header .nav-title {
+    color: rgba(0, 0, 0, 1);
+}
+/************** 
+media query
+**************/
+
+/*********************************************************************************
+    320px - 320px -- 320px --- 320px ----320px ---- 320px
+ *****************************************************************************/
+@media screen and (min-width: 320px) and (max-width: 800px) {
+
+    #main-header .nav-title {
+        width: 100%;
+        height: 50px;
+        text-align: center;
+        font-size: 2em;
+    }
+    div.nav h1 {
+        padding: .5em 0 0 0;
+    }
+    div.nav nav {
+        display: none;
+    }
+   
+    #landing-page h1 {
+        color: rgba(0, 0, 0, .2);
+        display: inline-block;
+        font-size: 5rem;
+        text-align: left;
+        z-index: -7;
+        white-space: nowrap;
+        transform: rotate(90deg);
+        margin-top: -30em;
+        margin-left: 16%;
+        margin-right: auto;
+    }
+    .content-page {
+        height: auto;
+        font-size: 2.7em;
+        margin-top: -6rem;
+        padding: 1em .5em;
+    }
+    .content-page p {
+        color:rgba(0, 0, 0, .9);
+    }
+    #main-header h4 {
+        font-size: 1.5em;
+        margin-top: .5rem;
+        grid-area: sidebar;
+        text-orientation: sideways;
+        writing-mode: vertical-rl;
+        border-bottom: 5px solid rgba(0, 0, 0, .9);
+        padding-bottom: 1em;
+        margin-left: 1em;
+        margin-bottom: 1em;
+    }
+    /************** 
+    about layout
+    **************/
+    .about-box {
+        margin-top: -5%;
+        width: 80%;
+        height: 50vh;
+        background-color: rgba(0, 0, 0, .8);
+        margin-left: 10%;
+        opacity: .5;
+    }
+    #about {
+        position: relative;
+        height: 700px;
+    }
+    .content-about {
+        width: 100%;
+        height: 645px;
+        background-color: rgba(0, 0, 0, .9);
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, .1);
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    #about h2 {
+        font-size: 2rem;
+        display: inline-block;
+        color: #fff;
+        padding: 1em;
+    }
+    #about p {
+        text-align: left;
+        width: 100%;
+        padding: 4em 4em 0 3em;
+        color: #fff;
+    }
+    /************** 
+    toolbox layout
+    **************/
+    #toolbox {
+        width: 100%;
+        height: auto;
+    }
+    .tb-title {
+        font-size: 3rem;
+        color: rgba(0, 0, 0, .5);
+        height: 20%;
+        text-align: center;
+        margin-bottom: 1em;
+    }
+    .tool {
+        color: #fff !important;
+        background-color: rgba(0, 0, 0, .2);
+    }
+    .design h3, .front-end h3 {
+        text-align: center;
+        font-size: 2.5em;
+        margin-bottom: 1em;
+    }
+    .design p, .front-end p {
+        font-size: 1.5em;
+        text-align: center;
+        font-weight: 600;
+        color: rgba(0, 0, 0, .8);
+    }
+    .design {
+        width:100%;
+        height: 300px;
+    }
+    .front-end {
+        width: 100%;
+        height: 300px;
+    }
+    .description {
+        width: 100%;
+        height: 100px;
+        text-align: center;
+        font-size: 1.5em;
+        padding: 0 3em;
+    }
+    .tb-box {
+        margin-left: -15%;
+        height: 240px;
+        width: 240px;
+        background: rgba(0, 0, 0, .2);
+    }
+        /************** 
+    portfolio layout
+    **************/
+    #portfolio {
+        width: 100%;
+        height: auto;
+    }
+    #portfolio h2 { 
+        font-size: 2em;
+        color: rgba(0, 0, 0, .9);
+        margin-bottom: 1em;
+        text-align: center;
+    }
+    .col {
+        display: grid;
+        grid-column: 1fr;
+        grid-row: repeat(5, 1fr);
+        -ms-grid-column: 1fr;
+        -ms-grid-row: repeat(5, 1fr);
+        grid-template-areas: 
+        'io'
+        'iw'
+        'it'
+        'po'
+        'pt'
+        'pe'
+        ;
+    }
+    .img-one {
+        grid-area: io;
+    }
+    .img-two {
+        grid-area: iw;
+    }
+    .img-three {
+        grid-area: it;
+    }
+    .pc-one {
+        grid-area: po;
+    }
+    .pc-two {
+        grid-area: pt;
+    }
+    .pc-three {
+        grid-area: pe;
+    }
+    .img {
+        height: 300px;
+        margin: 0 1em;
+        background: #fff;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, .2);
+    }
+    .p-content h3 {
+        margin: 1em 0;
+    }
+    .p-content {
+        padding: 0 2.5em;
+        margin-bottom: 1.5em;
+    }
+    /************** 
+    contact layout
+    **************/
+    #contact {
+        height: auto;
+        margin-top: 3em;
+    }
+    #contact h2 {
+        text-align: center;
+        font-size: 3em;
+    }
+    .info {
+        width: 100%;
+        height: 90%;
+        font-size: 2em;
+        background: rgba(0, 0, 0, 1);
+        padding: 2em;
+    }
+    .info li {
+        margin-bottom: .5em;
+    }
+    .info a {
+        font-size: .5em;
+        color: #fff;
+        border-left: 3px solid #fff;
+        padding-left: .5em;
+    }
+    .info a:hover {
+        transition: all .4s ease-in 0s;
+        border-left: 15px solid rgba(0, 0, 0, 1);
+    }
+}
+/*********************************************************************************
+    800px - 800px -- 800px --- 800px ----800px ---- 800px
+ *****************************************************************************/
+@media screen and (min-width: 800.5px) and (max-width: 1200px) {
+    #main-header {
+        margin: 2% !important;
+    }
+    div.nav .nav-title {
+        font-size: 1.6em !important;
+    }
+    div.nav nav {
+        padding-top: 2em !important;
+    }
+    div.nav ul li {
+        font-size: 1.2em !important;
+    }
+    .content-page {
+        margin-top: -17rem !important;
+        font-size: 3.3em !important;
+    }
+    #main-header h4 {
+        margin-top: 6em !important;
+        margin-left: 2em !important;
+    }
+    /* about */
+    #about {
+        position: relative !important;
+    }
+    #about h2 {
+        width: 4em;
+        font-size: 5rem;
+        padding-left: 0rem !important;
+        display: inline-block;
+        border-right: none !important;  
+        position: absolute;
+    }
+    #about p {
+        padding-top: 7em !important;
+        width: 90% !important;
+    }
+    /* toolbox */
+    .description {
+        padding: 0 5em !important;
+    }
+    .design h3, .front-end h3 {
+        font-size: 2.5em;
+        margin-bottom: .5em !important;
+    }
+    .design p, .front-end p {
+        font-size: 1.5em !important;
+    }
+    /* contact */
+    .info {
+        font-size: 1.5em !important;
+    }
+}
+ /*********************************************************************************
+    1000px - 1000px -- 1000px --- 1000px ----1000px ---- 1000px
+ *****************************************************************************/
+@media (min-width: 801px ) {
+    #main-wrap {
+        font-family: 'Raleway', sans-serif;
+        line-height: 1.5;
+        display: grid;
+        grid-column: 1fr;
+        grid-row: repeat(5, 1fr);
+        -ms-grid-column: 1fr;
+        -ms-grid-row: repeat(5, 1fr);
+        grid-template-areas: 
+        'header'
+        'about'
+        'toolbox'
+        'port'
+        'contact'
+        ;
+        width: 100%;
+    }
+    /* made changes  */
+    header {
+        grid-area: header;
+        height: 930px;
+        max-height: 950px;
+    }
+    #about {
+        grid-area: about;
+        width: 70%;
+        height: 900px;
+        max-height: 950px;
+        color: #fff;
+    
+    }
+    #toolbox {
+        grid-area: toolbox;
+        width: auto;
+        height: 900px;
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+    #portfolio {
+        grid-area: port;
+        width: auto;
+        height: 1400px;
+        margin-top: 10%;
+         margin-right: 10%;
+    }
+    #contact {
+        grid-area: contact;
+        width: auto;
+        height: 500px;
+        margin-top: 10%;
+        margin-left: 10%;
+        background-color: rgba(0, 0, 0, .1);
+        color: #fff !important;
+        padding: 0 0 0 3em;
+    }
+    /* this is the header layout */
+    header {
+        margin: 0 5%;
+    }
+    #main-header h4 {
+        font-size: 1.5em;
+        margin-top: 4rem;
+        grid-area: sidebar;
+        /* text-orientation: sideways; */
+        writing-mode: vertical-rl;
+        -ms-writing-mode: tb-rl;
+        -webkit-transform: rotate(0deg);   
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg); 
+        border-bottom: 5px solid rgba(0, 0, 0, .9);
+        padding-bottom: 1em;
+    }
+    div.nav {
+        height: 40%;
+        background: none;
+        padding: 2em;
+    }
+    div.nav h1 {
+        padding-top: 1em;
+    }
+    div.nav .nav-title {
+        text-align: left;
+        display: inline-block;
+    }
+    div.nav nav {
+        float: right;
+        clear: both;
+        content: '';
+        padding-top: 2.5em;
+    }
+    .div.nav nav ul {
+        text-align: right;
+    }
+    div.nav ul li {
+        display: inline-block;
+        padding-right: 1em;
+        font-size: 1.5em;
+    }
+    div.nav nav ul li a:hover {
+        transition: all .2s ease-in 0s;
+        border-top: 4px solid rgba(0, 0, 0, .9);
+        color: rgba(0, 0, 0, .5);
+    }
+    #landing-page {
+        display: inline;
+    }
+    #landing-page h1 {
+        color: rgba(0, 0, 0, .05);
+        display: inline;
+        font-size: 8rem;
+        align-items: center;
+        z-index: -7;
+        white-space: nowrap;
+    }
+    .content-page {
+        height: auto;
+        font-size: 4em;
+        margin-top: -15rem;
+        margin-left: 35%;
+        padding: 1em .5em;
+    }
+    .content-page p {
+        color:rgba(0, 0, 0, .9);
+    }
+    /************** 
+    about layout
+    **************/
+    .about-box {
+        margin-top: -5%;
+        width: 80%;
+        height: 50vh;
+        background-color: rgba(0, 0, 0, .2);
+        margin-left: 25%;
+        opacity: .5;
+    }
+    #about {
+        position: relative;
+    }
+    .content-about {
+        width: 100%;
+        height: 645px;
+        background-color: rgba(0, 0, 0, .9);
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, .1);
+        padding-top: 6em;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    #about h2 {
+        width: 40%;
+        font-size: 5rem;
+        padding-left: 2rem;
+        display: inline-block;
+        /* border-right: 5px solid rgba(175, 175, 175, 0.3); */
+        padding-top: 6.5em;
+        color: rgba(0, 0, 0, .5);
+    }
+    #about p {
+        height: 100%;
+        padding: 8em 4em;
+        width: 60%;
+        float: right;
+        clear: both;
+    }
+    /************** 
+    toolbox layout
+    **************/
+    .tb-title {
+        font-size: 5rem;
+        color: rgba(0, 0, 0, .5);
+        height: 20%;
+        text-align: right;
+        margin-bottom: 2em;
+    }
+    .tool {
+        color: #fff !important;
+        background-color: rgba(0, 0, 0, .2);
+    }
+    .design h3, .front-end h3 {
+        text-align: center;
+        font-size: 3.5em;
+        margin-bottom: 1em;
+    }
+    .design p, .front-end p {
+        font-size: 2em;
+        text-align: center;
+        font-weight: 600;
+        color: rgba(0, 0, 0, .8);
+    }
+    .design {
+        width: 50%;
+        float: left;
+        height: 300px;
+    }
+    .front-end {
+        width: 50%;
+        float:right;
+        height: 300px;
+    }
+    .description {
+        width: 100%;
+        height: 100px;
+        text-align: center;
+        font-size: 1.5em;
+        padding: 0 10em;
+    }
+    .tb-box {
+        margin-left: -15%;
+        height: 540px;
+        width: 540px;
+        background: rgba(0, 0, 0, .2);
+    }
+    .clearfix::after {
+        visibility: hidden;
+        display: table;
+        content: '';
+        clear: both;
+    }
+    /************** 
+    portfolio layout
+    **************/
+    #portfolio h2 { 
+        font-size: 5em;
+        color: rgba(0, 0, 0, .9);
+        margin-bottom: 1em;
+        margin-left: 1em;
+    }
+    .col {
+        margin: 1em;
+    }
+    .p-one {
+        width: 100%;
+        height: 30%;
+        background: none;
+    }
+    .p-two {
+        width: 100%;
+        height: 30%;
+    }
+    .p-two p {
+        float: right;
+    }
+    .p-three {
+        width: 100%;
+        height: 30%;
+    }
+    .img {
+        background: rgba(0, 0, 0, .8);
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, .1);
+    }
+    .img-one, .img-three {
+        float: right;
+        width: 50%;
+        height: 100%;
+
+    }
+    .img-two {
+        float: left;
+        width: 50%;
+        height: 100%;
+    }
+
+    .p-content {
+        color: rgba(0, 0, 0, .9);
+        width: 50%;
+        height: 100%;
+        padding: 7em 3.5em;
+    }
+    .pc-one {
+        float: left;
+    }
+    .pc-two {
+        float: right;
+    }
+    .pc-three {
+        float: left;
+    }
+    /************** 
+    contact layout
+    **************/
+    #contact h2 {
+        font-size: 5em;
+    }
+    .info {
+        width: auto;
+        height: 80%;
+        margin-left:20%;
+        font-size: 2em;
+        background: rgba(0, 0, 0, 1);
+        padding:4em;
+    }
+    .info li {
+        margin-bottom: 1em;
+    }
+    .info a {
+        color: #fff;
+        border-left: 3px solid #fff;
+        padding-left: .5em;
+    }
+    .info a:hover {
+        transition: all .4s ease-in 0s;
+        border-left: 15px solid rgba(0, 0, 0, 1);
+    }
+}
